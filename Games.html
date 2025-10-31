@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="images/IMG_0397-removebg-preview.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="stylesheet.css">
+<title>S1lk08 | Games</title>
+<style>
+/* Header */
+header {
+  background: linear-gradient(180deg, #7ec0ee, #4a90e2); /* Lighter baby blue gradient */
+  text-align: center;
+  padding: 60px 0 40px;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.header-title {
+  font-size: 2.7rem;
+  color: #00ff88;
+  margin: 0;
+}
+
+.header-top-left {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.small-logo {
+  width: 55px;
+  height: 55px;
+}
+
+.header-subtitle {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Top Navigation */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+ul.topnav li {
+  display: inline-block;
+}
+
+ul.topnav li a {
+  display: block;
+  color: #111;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+ul.topnav li a:hover {
+  background-color: #00ff88;
+  color: black;
+}
+
+ul.topnav li a.active {
+  background-color: #00ff88;
+  color: black;
+}
+
+/* Dark mode */
+body.dark-mode header {
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+}
+
+body.dark-mode ul.topnav {
+  background-color: #111;
+}
+
+body.dark-mode ul.topnav li a {
+  color: #fff;
+}
+
+body.dark-mode ul.topnav li a:hover,
+body.dark-mode ul.topnav li a.active {
+  color: black;
+}
+
+ul.topnav li:last-child {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+/* Main Content */
+main {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Frosted Glass Disclaimer Box */
+.games-disclaimer {
+  padding: 40px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.games-disclaimer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 255, 136, 0.25);
+}
+
+.games-disclaimer h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #00ff88;
+}
+
+.games-disclaimer p {
+  font-size: 1.1rem;
+  color: #111;
+  margin: 0;
+}
+
+body.dark-mode .games-disclaimer p {
+  color: #ccc;
+}
+
+/* Return Home Button */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 25px;
+}
+
+.btn:hover {
+  background: rgba(0, 255, 136, 0.7);
+  transform: scale(1.05);
+}
+
+.btn img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Footer */
+footer {
+  background-color: #e0e0e0;
+  text-align: center;
+  color: #111;
+  padding: 25px 10px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+}
+
+body.dark-mode footer {
+  background-color: #111;
+  color: #ccc;
+}
+
+/* Temporary Disclaimer */
+.disclaimer {
+  background-color: #290000;
+  color: #ff4d4d;
+  text-align: center;
+  font-weight: bold;
+  padding: 12px;
+  font-size: 1rem;
+}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  ⚠️ <strong>DISCLAIMER:</strong> This server is currently under construction. ⚠️
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-top-left">
+    <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="images/IMG_0397-removebg-preview.png" alt="Logo" class="small-logo">
+      <p class="header-subtitle">s1lk08.com</p>
+    </a>
+  </div>
+  <h1 class="header-title">Games</h1>
+</header>
+
+<!-- Top Navigation -->
+<ul class="topnav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="Games.html" class="active">Games</a></li>
+  <li><a href="Socials.html">Socials</a></li>
+  <li><a href="#">Coming Soon</a></li>
+  <li style="margin-left:auto;"><a href="#" id="dark-mode-toggle">🌙 Dark Mode</a></li>
+</ul>
+
+<!-- Main Content -->
+<main>
+  <div class="games-disclaimer">
+    <h2>⚠️ No Games To See Yet!</h2>
+    <p>My projects are still in development — check back soon for future releases and playable builds!</p>
+    <a href="Index.html" class="btn">
+      <img src="https://img.icons8.com/ios-filled/50/00ff88/home.png" alt="Home Icon">
+      Return Home
+    </a>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 S1lk08. All rights reserved.</p>
+  <p>Published on: November 2025 | Last updated on: <span id="last-updated"></span></p>
+  <p>Special thanks to a friend for assistance with server setup.</p>
+</footer>
+
+<script>
+document.getElementById("last-updated").textContent = new Date(document.lastModified).toLocaleDateString();
+
+const body = document.body;
+const darkToggle = document.getElementById('dark-mode-toggle');
+
+// Load saved theme first
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+  darkToggle.textContent = '☀️ Light Mode';
+}
+
+// Toggle dark mode
+darkToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  const isDark = body.classList.contains('dark-mode');
+  darkToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+</script>
+
+</body>
+</html>
