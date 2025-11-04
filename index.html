@@ -212,6 +212,256 @@ body.dark-mode footer {
   padding: 12px;
   font-size: 1rem;
 }
+
+/* ------------------ */
+/* MOBILE RESPONSIVE DESIGN */
+/* ------------------ */
+
+@media screen and (max-width: 768px) {
+  /* Header adjustments */
+  header {
+    padding: 40px 0 30px;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+  }
+
+  .header-top-left {
+    top: 10px;
+    left: 10px;
+    gap: 8px;
+  }
+
+  .small-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Navigation: stack items vertically with a collapsible look */
+  ul.topnav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul.topnav li {
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  ul.topnav li a {
+    text-align: left;
+    padding: 14px 16px;
+  }
+
+  ul.topnav li:last-child {
+    margin-left: 0;
+  }
+
+  /* Main content: stack columns vertically */
+  main.content {
+    flex-direction: column;
+    margin: 25px auto;
+    gap: 25px;
+    padding: 0 10px;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .left-column img.about-image {
+    float: none;
+    display: block;
+    margin: 0 auto 15px;
+    width: 65%;
+  }
+
+  .left-column img.about-fill-image {
+    width: 100%;
+  }
+
+  .subsection .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  /* Footer adjustments */
+  footer {
+    font-size: 0.8rem;
+    padding: 20px 8px;
+  }
+
+  /* Disclaimer spacing */
+  .disclaimer {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
+
+/* Even smaller devices (phones under 480px) */
+@media screen and (max-width: 480px) {
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  .header-top-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .left-column img.about-image {
+    width: 80%;
+  }
+
+  .subsection h3 {
+    font-size: 1.1rem;
+  }
+
+  .subsection p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ------------------ */
+/* RESPONSIVE HAMBURGER NAVIGATION */
+/* ------------------ */
+
+/* Base nav styling (same as before) */
+.topnav {
+  background-color: #e0e0e0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+#nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+}
+
+#nav-links li {
+  display: inline-block;
+}
+
+#nav-links li a {
+  display: block;
+  color: #111;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+#nav-links li a:hover {
+  background-color: #00ff88;
+  color: black;
+}
+
+#nav-links li a.active {
+  background-color: #00ff88;
+  color: black;
+}
+
+#nav-links li:last-child {
+  margin-left: auto;
+}
+
+/* Hamburger button (hidden by default) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Dark mode styling */
+body.dark-mode .topnav {
+  background-color: #111;
+}
+
+body.dark-mode #nav-links li a {
+  color: #fff;
+}
+
+body.dark-mode #nav-links li a:hover,
+body.dark-mode #nav-links li a.active {
+  color: black;
+}
+
+body.dark-mode .nav-toggle {
+  color: #fff;
+}
+
+/* ---------- Mobile Layout ---------- */
+@media screen and (max-width: 768px) {
+  .topnav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: block;
+    align-self: flex-end;
+    margin-right: 12px;
+    margin-top: 8px;
+  }
+
+  /* Hide links until toggled */
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  #nav-links.show {
+    display: flex;
+    animation: dropdown 0.25s ease;
+  }
+
+  #nav-links li {
+    width: 100%;
+  }
+
+  #nav-links li a {
+    text-align: left;
+    padding: 14px 16px;
+  }
+
+  body.dark-mode #nav-links {
+    background-color: #111;
+  }
+
+  @keyframes dropdown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
 </style>
 </head>
 <body>
@@ -232,13 +482,17 @@ body.dark-mode footer {
 </header>
 
 <!-- Top Navigation -->
-<ul class="topnav">
-  <li><a href="index.html" class="active">Home</a></li>
-  <li><a href="games.html">Games</a></li>
-  <li><a href="socials.html">Socials</a></li>
-  <li><a href="#">Coming Soon</a></li>
-  <li style="margin-left:auto;"><a href="#" id="dark-mode-toggle">🌙 Dark Mode</a></li>
-</ul>
+<nav class="topnav">
+  <button class="nav-toggle" id="nav-toggle">☰</button>
+  <ul id="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="games.html">Games</a></li>
+    <li><a href="socials.html">Socials</a></li>
+    <li><a href="#">Coming Soon</a></li>
+    <li style="margin-left:auto;"><a href="#" id="dark-mode-toggle">🌙 Dark Mode</a></li>
+  </ul>
+</nav>
+
 
 <main class="content">
   <div class="left-column">
@@ -298,6 +552,15 @@ darkToggle.addEventListener('click', () => {
   darkToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
+
+// Mobile hamburger toggle
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
 </script>
 
 </body>
