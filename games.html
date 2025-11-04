@@ -190,6 +190,136 @@ body.dark-mode footer {
   padding: 12px;
   font-size: 1rem;
 }
+
+  /* ------------------ */
+/* RESPONSIVE HAMBURGER NAVIGATION */
+/* ------------------ */
+
+/* Base nav styling (same as before) */
+.topnav {
+  background-color: #e0e0e0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+#nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+}
+
+#nav-links li {
+  display: inline-block;
+}
+
+#nav-links li a {
+  display: block;
+  color: #111;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+#nav-links li a:hover {
+  background-color: #00ff88;
+  color: black;
+}
+
+#nav-links li a.active {
+  background-color: #00ff88;
+  color: black;
+}
+
+#nav-links li:last-child {
+  margin-left: auto;
+}
+
+/* Hamburger button (hidden by default) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Dark mode styling */
+body.dark-mode .topnav {
+  background-color: #111;
+}
+
+body.dark-mode #nav-links li a {
+  color: #fff;
+}
+
+body.dark-mode #nav-links li a:hover,
+body.dark-mode #nav-links li a.active {
+  color: black;
+}
+
+body.dark-mode .nav-toggle {
+  color: #fff;
+}
+
+/* ---------- Mobile Layout ---------- */
+@media screen and (max-width: 768px) {
+  .topnav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: block;
+    align-self: flex-end;
+    margin-right: 12px;
+    margin-top: 8px;
+  }
+
+  /* Hide links until toggled */
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  #nav-links.show {
+    display: flex;
+    animation: dropdown 0.25s ease;
+  }
+
+  #nav-links li {
+    width: 100%;
+  }
+
+  #nav-links li a {
+    text-align: left;
+    padding: 14px 16px;
+  }
+
+  body.dark-mode #nav-links {
+    background-color: #111;
+  }
+
+  @keyframes dropdown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
 </style>
 </head>
 <body>
@@ -210,13 +340,17 @@ body.dark-mode footer {
 </header>
 
 <!-- Top Navigation -->
-<ul class="topnav">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="games.html" class="active">Games</a></li>
-  <li><a href="socials.html">Socials</a></li>
-  <li><a href="#">Coming Soon</a></li>
-  <li style="margin-left:auto;"><a href="#" id="dark-mode-toggle">🌙 Dark Mode</a></li>
-</ul>
+<!-- Top Navigation -->
+<nav class="topnav">
+  <button class="nav-toggle" id="nav-toggle">☰</button>
+  <ul id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="games.html" class="active">Games</a></li>
+    <li><a href="socials.html">Socials</a></li>
+    <li><a href="#">Coming Soon</a></li>
+    <li style="margin-left:auto;"><a href="#" id="dark-mode-toggle">🌙 Dark Mode</a></li>
+  </ul>
+</nav>
 
 <!-- Main Content -->
 <main>
