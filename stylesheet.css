@@ -1,6 +1,16 @@
+@font-face {
+  font-family: comic-sans-gooder;
+  src: url('comicsans-font/Ldfcomicsans-jj7l.ttf') format('truetype'),
+	url('comicsans-font/Ldfcomicsansbold-zgma.ttf') format('truetype'), 
+	url('comicsans-font/Ldfcomicsanshairline-5PmL.ttf') format('truetype'),
+	url('comicsans-font/Ldfcomicsanslight-6dZo.ttf') format('truetype');
+  font-weight: normal;
+}
+
 * {
   box-sizing: border-box;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: comic-sans-gooder;
+  font-weight: bold;
 }
 
 body {
