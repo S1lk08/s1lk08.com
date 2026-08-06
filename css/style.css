@@ -10,21 +10,21 @@
 
 @font-face {
   font-family: "ComicSansGooder";
-  src: url("/fonts/Ldfcomicsanslight-6dZo.ttf") format("truetype");
+  src: url("../fonts/Ldfcomicsanslight-6dZo.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
 }
 
 @font-face {
   font-family: "ComicSansGooder";
-  src: url("/fonts/Ldfcomicsans-jj7l.ttf") format("truetype");
+  src: url("../fonts/Ldfcomicsans-jj7l.ttf") format("truetype");
   font-weight: 400 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: "ComicSansGooder";
-  src: url("/fonts/Ldfcomicsansbold-zgma.ttf") format("truetype");
+  src: url("../fonts/Ldfcomicsansbold-zgma.ttf") format("truetype");
   font-weight: 600 900;
   font-display: swap;
 }
