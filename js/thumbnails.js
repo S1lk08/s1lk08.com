@@ -88,7 +88,6 @@
     var canvases = document.querySelectorAll("canvas[data-thumb-src]");
     canvases.forEach(function (canvas) {
       var img = new Image();
-      img.crossOrigin = "anonymous";
       img.onload = function () {
         drawWatermarked(img, canvas);
       };
