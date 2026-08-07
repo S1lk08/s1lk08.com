@@ -513,6 +513,7 @@ select {
   height: 3.5rem;
   z-index: 1;
   display: block;
+  transform: scaleY(-1);
 }
 
 .hero-drip path {
