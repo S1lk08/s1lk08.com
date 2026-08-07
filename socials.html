@@ -18,9 +18,10 @@
   <link rel="alternate icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
-  <div class="page">
+  <div class="page has-tabbar">
 
     <div class="announcement"><span>⚠️ Heads up: this server is still under construction.</span></div>
 
@@ -189,6 +190,26 @@
     </footer>
 
   </div>
+
+    <nav class="mobile-tabbar" aria-label="Mobile navigation">
+      <a href="index.html" class="tabbar-item">
+        <span class="tabbar-icon">🏠</span><span class="tabbar-label">Home</span>
+      </a>
+      <a href="games.html" class="tabbar-item">
+        <span class="tabbar-icon">🎮</span><span class="tabbar-label">Games</span>
+      </a>
+      <a href="socials.html" class="tabbar-item active">
+        <span class="tabbar-icon">📱</span><span class="tabbar-label">Socials</span>
+      </a>
+      <a href="thumbnails.html" class="tabbar-item">
+        <span class="tabbar-icon">🖼️</span><span class="tabbar-label">Thumbs</span>
+      </a>
+      <button type="button" class="tabbar-item" data-theme-toggle>
+        <span class="tabbar-icon">🌙</span><span class="tabbar-label">Theme</span>
+      </button>
+    </nav>
+
+    <button type="button" id="scroll-top-btn" class="scroll-top-btn" aria-label="Scroll to top">↑</button>
 
   <script src="js/nav.js"></script>
 </body>

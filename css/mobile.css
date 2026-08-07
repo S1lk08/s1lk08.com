@@ -1,0 +1,240 @@
+/*
+  s1lk08.com — mobile enhancements
+  Everything in here only activates below 768px (the same breakpoint
+  style.css already uses to swap the desktop nav for the hamburger).
+  Desktop styling in style.css is completely untouched.
+*/
+
+/* Elements that only exist for mobile — hidden by default, shown below */
+.mobile-tabbar,
+.scroll-top-btn {
+  display: none;
+}
+
+@media (max-width: 767px) {
+
+  /* ---------------------------------- */
+  /* Calmer, cleaner surfaces            */
+  /* ---------------------------------- */
+  /* The tilted panels look great as accents on a wide desktop layout, but on
+     a narrow single-column feed they just eat up edge space and feel messy.
+     Straighten everything out and trim the shadows down a notch. */
+
+  .panel.tilt-l,
+  .panel.tilt-r,
+  .social-card.tilt-l,
+  .social-card.tilt-r,
+  .thumb-card.tilt-l,
+  .thumb-card.tilt-r {
+    transform: none;
+  }
+
+  .panel,
+  .thumb-card,
+  .social-card {
+    box-shadow: 4px 4px 0 var(--shadow-ink);
+    border-radius: var(--radius-lg);
+  }
+
+  .btn,
+  .theme-toggle {
+    box-shadow: 3px 3px 0 var(--shadow-ink);
+  }
+
+  /* ---------------------------------- */
+  /* Tighter type & spacing              */
+  /* ---------------------------------- */
+
+  .hero-inner {
+    padding: 2rem 1.25rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .hero h1 { font-size: 2.1rem; }
+  .hero p.tagline { font-size: 0.95rem; }
+  .hero-art { min-height: 8.5rem; }
+  .hero-art-frame { width: 7.5rem; height: 7.5rem; }
+  .hero-drip { height: 2.25rem; }
+
+  .site-main { padding: 1.75rem 1rem 2.5rem; }
+  .container { padding: 0 1rem; }
+
+  h2 { font-size: 1.3rem; }
+
+  .panel { padding: 1.25rem; }
+  .panel-inset { padding: 0.9rem; }
+
+  .announcement {
+    font-size: 0.72rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .announcement span { padding: 0.15rem 0.7rem; }
+
+  /* ---------------------------------- */
+  /* Thumb-friendly tap targets          */
+  /* ---------------------------------- */
+
+  .btn {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.95rem;
+    min-height: 46px;
+  }
+
+  .quick-link { padding: 1.1rem; }
+
+  .action-list .link-row {
+    padding: 1rem;
+    min-height: 46px;
+  }
+
+  .currency-picker select {
+    padding: 0.65rem 0.85rem;
+  }
+
+  /* The "click to expand" hint on thumbnails only shows on :hover, which
+     doesn't exist on touch — make it always visible on mobile instead. */
+  .thumb-expand {
+    opacity: 1;
+    bottom: 0.6rem;
+    right: 0.6rem;
+  }
+
+  /* Pricing header + currency dropdown stack instead of squeezing side by side */
+  .pricing-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .currency-picker {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .currency-picker select {
+    flex: 1;
+    max-width: 11rem;
+  }
+
+  /* ---------------------------------- */
+  /* Swap the dropdown hamburger for a   */
+  /* bottom tab bar — easier one-handed  */
+  /* ---------------------------------- */
+
+  .nav-toggle,
+  .nav-mobile {
+    display: none !important;
+  }
+
+  /* Leave room at the bottom of tabbar pages so content never sits under it */
+  .page.has-tabbar {
+    padding-bottom: 4.5rem;
+  }
+
+  .mobile-tabbar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    align-items: stretch;
+    justify-content: space-around;
+    background-color: color-mix(in oklch, var(--sky) 94%, transparent);
+    backdrop-filter: blur(10px);
+    border-top: 3px solid var(--bark);
+    padding: 0.35rem 0.25rem calc(0.35rem + env(safe-area-inset-bottom));
+  }
+
+  .tabbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    flex: 1;
+    min-width: 0;
+    border: 2px solid transparent;
+    background: none;
+    border-radius: var(--radius-md);
+    padding: 0.35rem 0.2rem;
+    color: var(--muted-ink);
+    font-family: inherit;
+    transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .tabbar-item:active {
+    transform: scale(0.94);
+  }
+
+  .tabbar-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .tabbar-label {
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  .tabbar-item.active {
+    color: var(--bark);
+    background-color: var(--slime);
+    border-color: var(--bark);
+    box-shadow: 2px 2px 0 var(--shadow-ink);
+  }
+
+  /* ---------------------------------- */
+  /* Scroll-to-top                       */
+  /* ---------------------------------- */
+
+  .scroll-top-btn {
+    position: fixed;
+    right: 1rem;
+    bottom: 5.25rem;
+    z-index: 55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 2.5px solid var(--bark);
+    background-color: var(--slime);
+    color: var(--bark);
+    font-size: 1.1rem;
+    font-weight: 800;
+    box-shadow: 3px 3px 0 var(--shadow-ink);
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .scroll-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* ---------------------------------- */
+  /* Lightbox — put the close button in  */
+  /* comfortable thumb reach             */
+  /* ---------------------------------- */
+
+  .lightbox-close {
+    top: auto;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.75rem 1.1rem;
+    font-size: 1rem;
+  }
+
+  /* Calmer floaty animations so scrolling doesn't feel jittery */
+  .hero-art-frame,
+  .hero-drop,
+  .not-found .blob-404 {
+    animation-duration: 6s;
+  }
+}
