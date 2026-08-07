@@ -92,6 +92,12 @@
     padding: 0.65rem 0.85rem;
   }
 
+  .carousel-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.4rem;
+  }
+
   /* The "click to expand" hint on thumbnails only shows on :hover, which
      doesn't exist on touch — make it always visible on mobile instead. */
   .thumb-expand {

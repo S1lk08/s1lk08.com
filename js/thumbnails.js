@@ -23,6 +23,7 @@
     initWatermarks();
     initCurrencyPicker();
     initLightbox();
+    initCarousel();
   });
 
   // ---- Watermarking ----
@@ -121,6 +122,40 @@
 
     select.addEventListener("change", update);
     update();
+  }
+
+  // ---- Gallery carousel ----
+
+  function initCarousel() {
+    var track = document.getElementById("thumb-gallery");
+    var prevBtn = document.querySelector(".carousel-btn.prev");
+    var nextBtn = document.querySelector(".carousel-btn.next");
+    if (!track || !prevBtn || !nextBtn) return;
+
+    function step() {
+      var card = track.querySelector(".thumb-card");
+      if (!card) return track.clientWidth;
+      var gap = parseFloat(getComputedStyle(track).columnGap || "0") || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function updateButtons() {
+      var maxScroll = track.scrollWidth - track.clientWidth - 1;
+      prevBtn.disabled = track.scrollLeft <= 0;
+      nextBtn.disabled = track.scrollLeft >= maxScroll;
+    }
+
+    prevBtn.addEventListener("click", function () {
+      track.scrollBy({ left: -step(), behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", function () {
+      track.scrollBy({ left: step(), behavior: "smooth" });
+    });
+
+    track.addEventListener("scroll", updateButtons, { passive: true });
+    window.addEventListener("resize", updateButtons);
+    updateButtons();
   }
 
   // ---- Lightbox ----
