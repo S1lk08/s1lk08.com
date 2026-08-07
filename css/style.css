@@ -516,7 +516,7 @@ select {
   transform: scaleY(-1);
 }
 
-.hero-drip path {
+.hero-drip path.drip-base {
   fill: var(--sky);
   transition: fill 0.2s ease;
 }
